@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/SystemOFSchool/static/css/main.9a5d5ad2.css",
-    "main.js": "/SystemOFSchool/static/js/main.a7f7964d.js",
-    "static/js/787.6a65fbf7.chunk.js": "/SystemOFSchool/static/js/787.6a65fbf7.chunk.js",
-    "static/media/user.png": "/SystemOFSchool/static/media/user.557587208eb9e232f2ca.png",
-    "static/media/file.png": "/SystemOFSchool/static/media/file.a81dcaa9befe2aabc429.png",
-    "static/media/loading.png": "/SystemOFSchool/static/media/loading.0633615fde308423b947.png",
-    "static/media/delete.png": "/SystemOFSchool/static/media/delete.b5d68e25ab3f6cd47475.png",
-    "static/media/edit.png": "/SystemOFSchool/static/media/edit.3a5719e61661a36f0f6b.png",
-    "index.html": "/SystemOFSchool/index.html",
-    "main.9a5d5ad2.css.map": "/SystemOFSchool/static/css/main.9a5d5ad2.css.map",
-    "main.a7f7964d.js.map": "/SystemOFSchool/static/js/main.a7f7964d.js.map",
-    "787.6a65fbf7.chunk.js.map": "/SystemOFSchool/static/js/787.6a65fbf7.chunk.js.map"
+    "main.css": "/SystemOFSchool/index.html/static/css/main.9a5d5ad2.css",
+    "main.js": "/SystemOFSchool/index.html/static/js/main.bd970a1f.js",
+    "static/js/787.6a65fbf7.chunk.js": "/SystemOFSchool/index.html/static/js/787.6a65fbf7.chunk.js",
+    "static/media/user.png": "/SystemOFSchool/index.html/static/media/user.557587208eb9e232f2ca.png",
+    "static/media/file.png": "/SystemOFSchool/index.html/static/media/file.a81dcaa9befe2aabc429.png",
+    "static/media/loading.png": "/SystemOFSchool/index.html/static/media/loading.0633615fde308423b947.png",
+    "static/media/delete.png": "/SystemOFSchool/index.html/static/media/delete.b5d68e25ab3f6cd47475.png",
+    "static/media/edit.png": "/SystemOFSchool/index.html/static/media/edit.3a5719e61661a36f0f6b.png",
+    "index.html": "/SystemOFSchool/index.html/index.html",
+    "main.9a5d5ad2.css.map": "/SystemOFSchool/index.html/static/css/main.9a5d5ad2.css.map",
+    "main.bd970a1f.js.map": "/SystemOFSchool/index.html/static/js/main.bd970a1f.js.map",
+    "787.6a65fbf7.chunk.js.map": "/SystemOFSchool/index.html/static/js/787.6a65fbf7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9a5d5ad2.css",
-    "static/js/main.a7f7964d.js"
+    "static/js/main.bd970a1f.js"
   ]
 }
