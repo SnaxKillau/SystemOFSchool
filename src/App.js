@@ -29,7 +29,7 @@ function App() {
    <Provider store={store}>
      <div>
       
-      <Router>
+      <Router basename='/SystemOFSchool'>
       
         <Routes>
          
