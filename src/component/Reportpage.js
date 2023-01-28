@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import Report_information from './PostDetail'
 import { useDispatch, useSelector } from 'react-redux'
-import {fetchReport,fetchReportError,fetchReportRequest }from '../redux/ReportAction'
+import {fetchReport,fetchReportError,fetchReportRequest,deleteReport }from '../redux/ReportAction'
 import Loading from './Loading'
 import de from './image/delete.png'
 import edit from './image/edit.png'
@@ -12,12 +12,15 @@ import view from './image/file.png'
 
 
 
+
+
 function Reportpage() {
     const [show , Setshow] = useState(true)
     const [haveData, SetHaveData] = useState(false)
     const dispatch = useDispatch();
     const [reportData , setReportData] = useState([])
     const data = useSelector(state => state.report)
+    const deletedata = useSelector(state => state.deletereport)
 
    
     useEffect(() => {
@@ -28,11 +31,13 @@ function Reportpage() {
             console.log("Hello")
            }
            
-
-
-
           
     },[])
+    const deletebyID = (id) => {
+          dispatch(deleteReport(id))
+          
+        
+    }
 
     
 
@@ -74,7 +79,7 @@ function Reportpage() {
                       </div>
                       <div className='flex justify-end'>
                       <div className='flex justify-between sm:justify-center sm:space-x-5 '>
-                        <button className=' w-12 sm:w-10 flex justify-center items-center'>
+                        <button className=' w-12 sm:w-10 flex justify-center items-center' onClick={() => {deletebyID(e.id)}}>
                           <img src = {de} className='w-5' ></img>
                         </button>
                         <button  className=' w-12 sm:w-10 flex justify-center items-center' >

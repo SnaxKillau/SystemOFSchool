@@ -33,12 +33,13 @@ function App() {
       
         <Routes>
          
-          <Route path='/' element = {<Reportpage></Reportpage>}></Route>
+          
           <Route path='/SignIn' element = {<Singin></Singin>}></Route>
           <Route path='/Admin/SignIn' element = {<AdminSignIn></AdminSignIn>}></Route>
-          <Route path='/SignUp' element = {<Signup></Signup>}></Route>
+          
           <Route path='/Public' element = {<Post_Public></Post_Public>}></Route>
           <Route path='/Users' element = {<Users></Users>}></Route>
+          <Route path='/SignUp' element = {<Signup></Signup>}></Route>
           <Route path='/ReportPost' element = {<Form></Form>}></Route>
           <Route path = "/LostorFound" element = {<LostorFoundingPage></LostorFoundingPage>}></Route>
           <Route path="/NewPost" element = {<PostPosting></PostPosting>}></Route>
@@ -48,6 +49,8 @@ function App() {
           <Route path='/Profile' element = {<UserProfile></UserProfile>}></Route>
           <Route path='/Posting' element = {<PostPosting></PostPosting>}></Route>
           
+          <Route path='/' element = {<Reportpage></Reportpage>}></Route>
+         
         </Routes>
       </Router>
    
