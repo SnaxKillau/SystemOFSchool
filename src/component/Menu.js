@@ -131,6 +131,16 @@ g-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset 
                           </a>
                         )}
                       </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to = "/SignIn"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Sign In
+                          </Link>
+                        )}
+                      </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -208,6 +218,13 @@ g-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset 
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                 >
                   Sign out
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as={Link}
+                  to = "/SignIn"
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                >
+                  Sign In
                 </Disclosure.Button>
               </div>
             </div>

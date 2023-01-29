@@ -20,6 +20,7 @@ function Reportpage() {
     const dispatch = useDispatch();
     const [reportData , setReportData] = useState([])
     const data = useSelector(state => state.report)
+    var num = 0
     const deletedata = useSelector(state => state.deletereport)
 
    
@@ -35,9 +36,11 @@ function Reportpage() {
     },[])
     const deletebyID = (id) => {
           dispatch(deleteReport(id))
+          console.log(id)
           
-        
     }
+   
+ 
 
     
 
@@ -55,7 +58,7 @@ function Reportpage() {
          <Menu></Menu>
         
         {
-          data.loading ? <Loading></Loading> :  <div className='mt-10'>
+          data.loading || deletedata.loading ? <Loading></Loading> :  <div className='mt-10'>
           {
               show ? 
              <div>
@@ -82,8 +85,8 @@ function Reportpage() {
                         <button className=' w-12 sm:w-10 flex justify-center items-center' onClick={() => {deletebyID(e.id)}}>
                           <img src = {de} className='w-5' ></img>
                         </button>
-                        <button  className=' w-12 sm:w-10 flex justify-center items-center' >
-                          <img src = {view} className='w-5' ></img>
+                        <button  className=' w-12 sm:w-10 flex justify-center items-center'>
+                        <Link to = {`/reportDetail/${e.id}`}><img src = {view} className='w-5' ></img></Link>
                         </button>
                     ``</div>
                       </div>
@@ -123,7 +126,7 @@ function Reportpage() {
                           <img src = {de} className='w-5' ></img>
                         </button>
                         <button  className=' w-12 sm:w-10 flex justify-center items-center' >
-                          <img src = {view} className='w-5' ></img>
+                          <Link to = {`/reportDetail/${e.id}`}><img src = {view} className='w-5' ></img></Link>
                         </button>
                     ``</div>
                       </div>
@@ -135,9 +138,9 @@ function Reportpage() {
              
                </div>
                
+               
               
-             
-             
+            
               
           }
   

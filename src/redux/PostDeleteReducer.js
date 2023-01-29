@@ -1,27 +1,27 @@
-import {DELETE_REPORT_REQUEST,DELETE_REPORT_SUCCESS,DELETE_REPORT_ERROR } from './Reporttype'
- 
-const ReportState = {
+import {POST_DELETE_ERORR,POST_DELETE_REQUEST,POST_DELETE_SUCCESS} from './Reporttype'
+
+const PostState = {
     loading : false,
     report : '',
     error : '',
     
 }
 
-const deletereportReducer = (state = ReportState , action)=> {
+const deletepostReducer = (state = PostState , action)=> {
     switch(action.type){
     
-        case DELETE_REPORT_REQUEST:
+        case POST_DELETE_REQUEST:
           return{
             ...state,
             loading : true
           }  
-        case DELETE_REPORT_SUCCESS:
+        case POST_DELETE_SUCCESS:
             return{
                 loading : false,
                 report : action.payload,
                 error: ''
             }
-        case DELETE_REPORT_ERROR:
+        case POST_DELETE_ERORR:
             return{
                 loading : false,
                 report : '',
@@ -30,4 +30,4 @@ const deletereportReducer = (state = ReportState , action)=> {
         default :return state
     }
 }
-export default deletereportReducer;
+export default deletepostReducer;

@@ -5,81 +5,39 @@ import Menu from './Menu'
 import up from "./image/up-arrow.png"
 import view from './image/file.png'
 import remove from './image/delete.png'
+import { useDispatch, useSelector } from 'react-redux'
+import {fetchPublicPosts,deletePost} from '../redux/PostsAction'
 
 
 
 function Post_Public() {
 
-   const [show , setShow]= useState(true)
-   const data = [
-    {
-        "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-        "title": "I found at stem",
-        "username":"scofield",
-        "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-    },
-    {
-        "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-        "title": "I found at stem",
-        "username":"scofield",
-        "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-    },
-    {
-        "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-        "title": "I found at stem",
-        "username":"scofield",
-        "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-    },
-    {
-        "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-        "title": "I found at stem",
-        "username":"scofield",
-        "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-    },
-    {
-      "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-      "title": "I found at stem",
-      "username":"scofield",
-      "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-    } ,
-    {
-      "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-      "title": "I found at stem",
-      "username":"scofield",
-      "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-  },
-  {
-    "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-    "title": "I found at stem",
-    "username":"scofield",
-    "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-},
-{
-    "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-    "title": "I found at stem",
-    "username":"scofield",
-    "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-},
-{
-  "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-  "title": "I found at stem",
-  "username":"scofield",
-  "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-} ,
-{
-  "img" : "https://www.highsnobiety.com/static-assets/thumbor/NP3Qj83ZUNvIpPW2g46p2qJIJKY=/1600x2133/www.highsnobiety.com/static-assets/wp-content/uploads/2020/12/10192830/apple-airpods-max-review-13.jpg",
-  "title": "I found at stem",
-  "username":"scofield",
-  "user_profile":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6JhsQ_cONk2X9149DqiXNGnm8hFZuuG__NNpdNoHZ80GoFxeo-kkoIm4Rh8t2CvWTE0&usqp=CAU"
-}
-
-   ]
+   const deletedata = useSelector(state => state.postDelete)
+   const data = useSelector(state => state.posts)
+   const dispatch = useDispatch()
   
+
+
+   useEffect(() => {
+
+        if(data.posts.length == 0){
+        dispatch(fetchPublicPosts())
+        console.log(data)}
+
+
+   },[])
+   const deletepost = (id)=> {
+    console.log(id)
+      dispatch(deletePost(id))
+      
+      console.log(data)
+      
+   }
   return (
    <div>
      <Menu></Menu>
         {
-          show ? <div className='mt-10 ml-5 sm:ml-20' id = "top-public">
+          data.loading || deletedata.loading ? <Loading></Loading>: <div className='mt-10 ml-5 sm:ml-20' id = "top-public">
           <div className='grid grid-cols-2 justify-between'>
           <h1 className=' underline font-inter text-[#52586B]'>Public Post</h1>
           <div className=' flex justify-end mr-5 sm:mr-20 '>
@@ -90,20 +48,20 @@ function Post_Public() {
           
           <div className = "grid  grid-cols-1 sm:grid-cols-3 lg:grid-cols-4" >
           {
-              data.map((e)=> {
+              data.posts.data?.map((e)=> {
                 return(
-                  <div className=' w-9/12 mt-5 shadow-2xl rounded-xl'>
-                       <img src={e.img} className = 'w-screen h-2/4 rounded-t-xl'></img>
+                  <div className=' w-9/12 h-screen sm:h-5/6 mt-5 shadow-2xl rounded-xl' key={e.id}>
+                       <img src={e.attributes.img_link} className = 'w-screen h-2/4 rounded-t-xl'></img>
                        <div className='h-2/5'>
-                           <h1>Hello</h1>
+                           <h1 className='p-10 font-Spectral text-xl'>{e.attributes.title}</h1>
                        </div>
                        <div className=' flex justify-end content-center'>
                        <button>
-                         <Link to = '/PublicPost/PostDetail'>
+                         <Link to = {`/PublicPost/PostDetail/${e.id}`}>
                          <img src={view} className = "w-10 h-10 p-2"></img>
                          </Link>
                         </button>
-                        <button>
+                        <button onClick={() => {deletepost(e.id)}}>
                           <img src={remove} className = "w-10 h-10 p-2"></img>
                         </button>
                        
@@ -125,7 +83,7 @@ function Post_Public() {
           </div>
         
          
-      </div>:<Loading></Loading>
+      </div>
         }
        
       
