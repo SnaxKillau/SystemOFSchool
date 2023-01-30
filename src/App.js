@@ -24,6 +24,8 @@ import LostorFoundPosting from './component/LostorFoundPosting';
 import AdminSignIn from './component/AdminSignIn';
 import ReportDetail from './component/ReportDetail';
 import { useSelector } from 'react-redux';
+import AnnoumentDetail from './component/AnnoumentDetail';
+import AnnouncementPosting from './component/AnnouncementPosting';
 
 
 
@@ -56,10 +58,12 @@ function App() {
           <Route path='/Announment' element = {<Annoument></Annoument>}></Route>
           <Route path='/Profile' element = {<UserProfile></UserProfile>}></Route>
           <Route path='/Posting' element = {<PostPosting></PostPosting>}></Route>
-          
+          <Route path='/reportDetail/:id' element = {<ReportDetail></ReportDetail>}></Route>
+          <Route path='/announcementdetail/:id' element ={<AnnoumentDetail></AnnoumentDetail>}></Route>
+          <Route path='/announcementPosting' element = {<AnnouncementPosting></AnnouncementPosting>}></Route>
           <Route path='/' element = {<Reportpage></Reportpage>}></Route>
         
-          <Route path='/reportDetail/:id' element = {<ReportDetail></ReportDetail>}></Route>
+         
          
         
           
