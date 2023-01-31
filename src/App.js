@@ -26,6 +26,7 @@ import ReportDetail from './component/ReportDetail';
 import { useSelector } from 'react-redux';
 import AnnoumentDetail from './component/AnnoumentDetail';
 import AnnouncementPosting from './component/AnnouncementPosting';
+import LostorFoundDetail from './component/LostorFoundDetail';
 
 
 
@@ -52,6 +53,7 @@ function App() {
           <Route path='/SignUp' element = {<Signup></Signup>}></Route>
           <Route path='/ReportPost' element = {<Form></Form>}></Route>
           <Route path = "/LostorFound" element = {<LostorFoundingPage></LostorFoundingPage>}></Route>
+          <Route path = "/LostorFound/:id" element ={<LostorFoundDetail></LostorFoundDetail>}></Route>
           <Route path="/NewPost" element = {<PostPosting></PostPosting>}></Route>
           <Route path='/LostorFound/Posting' element = {<LostorFoundPosting></LostorFoundPosting>}></Route>
           <Route path = "/PublicPost/PostDetail/:id" element = {<PostDetail></PostDetail>}></Route>

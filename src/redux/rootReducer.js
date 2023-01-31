@@ -11,6 +11,10 @@ import announcementReducer from './AnnouncementReducer'
 import deleteAnnouncementReducer from "./AnnoumentDeleteReducer";
 import viewAnnouncementReducer from "./AnouncementDetailReducer";
 import postAnnouncementReducer from "./AnnounmentPostingReducer";
+import deleteFoundReducer from "./DeleteFoundReducer";
+import Foundreducer from "./LostandFoundReducer";
+import viewFoundReducer from "./Lost0rFoundDetail";
+import lostPostingReducer from "./LostorFoundingPostingReducer";
 
 const rootReducer = combineReducers({
     report:  reportReducer,
@@ -24,6 +28,10 @@ const rootReducer = combineReducers({
     annoncement : announcementReducer,
     deleteAnnouncement : deleteAnnouncementReducer,
     viewAnnouncement : viewAnnouncementReducer,
-    postAnnouncement : postAnnouncementReducer
+    postAnnouncement : postAnnouncementReducer,
+    deleteFound : deleteFoundReducer,
+    foundReducer : Foundreducer,
+    foundDetail : viewFoundReducer,
+    lostPosting : lostPostingReducer
 })
 export default rootReducer
