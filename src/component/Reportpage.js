@@ -119,6 +119,9 @@ function Reportpage() {
   
               :
                <div>
+                  <div className=' flex justify-end mr-5 sm:mr-5 '>
+             <Link to = '/ReportandInfoPosting' className=' bg-[#A1454D] text-white w-20 p-2 text-center rounded-lg'>Posting</Link>
+              </div>
                <div className='flex justify-between pt-3'>
                <button  className='border-solid border-black w-2/4 h-15 pt-3 text-center border-2 bg-[#52586B] text-white' onClick={() => {Setshow(true)}}>
                Ask for Informations
