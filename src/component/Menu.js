@@ -4,6 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import logo from '../component/image/logo.png'
 
 
 
@@ -37,13 +38,13 @@ export default function Example() {
                     
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
+                    src={logo}
+                    alt="ReportSystem"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
+                    src={logo}
+                    alt="ReportSystem"
                   />
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
@@ -113,12 +114,12 @@ g-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset 
                       
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to='/Profile'
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>

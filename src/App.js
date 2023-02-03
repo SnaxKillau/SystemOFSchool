@@ -27,6 +27,7 @@ import { useSelector } from 'react-redux';
 import AnnoumentDetail from './component/AnnoumentDetail';
 import AnnouncementPosting from './component/AnnouncementPosting';
 import LostorFoundDetail from './component/LostorFoundDetail';
+import InformationDetail from './component/InformationDetail';
 
 
 
@@ -62,7 +63,9 @@ function App() {
           <Route path='/Posting' element = {<PostPosting></PostPosting>}></Route>
           <Route path='/reportDetail/:id' element = {<ReportDetail></ReportDetail>}></Route>
           <Route path='/announcementdetail/:id' element ={<AnnoumentDetail></AnnoumentDetail>}></Route>
+          <Route path='/infomationDetail/:id' element = {<InformationDetail></InformationDetail>}></Route>
           <Route path='/announcementPosting' element = {<AnnouncementPosting></AnnouncementPosting>}></Route>
+          <Route path='/ReportandInfoPosting' element = {<Form></Form>}></Route>
           <Route path='/' element = {<Reportpage></Reportpage>}></Route>
         
          

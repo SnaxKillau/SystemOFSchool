@@ -9,6 +9,7 @@ import edit from './image/edit.png'
 import Menu from './Menu'
 import { Link } from 'react-router-dom'
 import view from './image/file.png'
+import {fetchInfo , deleteInfo} from '../redux/InformationAction'
 
 
 
@@ -22,8 +23,9 @@ function Reportpage() {
     const data = useSelector(state => state.report)
     var num = 0
     const deletedata = useSelector(state => state.deletereport)
+    const infoData = useSelector(state => state.info)
+    const deleteInfoData = useSelector(state => state.deleteInfo)
 
-   
     useEffect(() => {
 
          
@@ -31,6 +33,11 @@ function Reportpage() {
             dispatch(fetchReport())
             console.log("Hello")
            }
+           if(infoData.posts.length == 0){
+            dispatch(fetchInfo())
+           }
+           
+
            
           
     },[])
@@ -38,6 +45,11 @@ function Reportpage() {
           dispatch(deleteReport(id))
           console.log(id)
           
+    }
+    const deleteInfobyID = (id) =>{
+       dispatch(deleteInfo(id))
+       console.log(id)
+
     }
    
  
@@ -56,12 +68,16 @@ function Reportpage() {
   return (
     <div>
          <Menu></Menu>
+       
         
         {
-          data.loading || deletedata.loading ? <Loading></Loading> :  <div className='mt-10'>
+          data.loading || deletedata.loading || deleteInfoData.loading ||infoData.loading ? <Loading></Loading> :  <div className='mt-10'>
           {
               show ? 
              <div>
+                <div className=' flex justify-end mr-5 sm:mr-5 '>
+             <Link to = '/ReportandInfoPosting' className=' bg-[#A1454D] text-white w-20 p-2 text-center rounded-lg'>Posting</Link>
+              </div>
                <div  className='flex justify-between pt-3'>
               <button className='border-solid border-black w-2/4 h-15 pt-3 text-center border-t-2 '>
                 Ask for Informations
@@ -73,8 +89,9 @@ function Reportpage() {
 
                 
                  {
-                  data.report.data?.map((e) => {
+                  infoData.posts.data?.map((e) => {
                     return(
+  
                       <div className=' grid grid-cols-2 mt-5 border-l-8 border-[#A1454D] h-14' key={e.id}>
                       <div className='grid items-center ml-5'>
                           <h1>{e.attributes.title}</h1>
@@ -82,13 +99,13 @@ function Reportpage() {
                       </div>
                       <div className='flex justify-end'>
                       <div className='flex justify-between sm:justify-center sm:space-x-5 '>
-                        <button className=' w-12 sm:w-10 flex justify-center items-center' onClick={() => {deletebyID(e.id)}}>
+                        <button className=' w-12 sm:w-10 flex justify-center items-center' onClick={() => {deleteInfobyID(e.id)}}>
                           <img src = {de} className='w-5' ></img>
                         </button>
                         <button  className=' w-12 sm:w-10 flex justify-center items-center'>
-                        <Link to = {`/reportDetail/${e.id}`}><img src = {view} className='w-5' ></img></Link>
+                        <Link to = {`/infomationDetail/${e.id}`}><img src = {view} className='w-5' ></img></Link>
                         </button>
-                    ``</div>
+                    </div>
                       </div>
                 
                    </div>
@@ -122,13 +139,13 @@ function Reportpage() {
                       </div>
                       <div className='flex justify-end'>
                       <div className='flex justify-between sm:justify-center sm:space-x-5 '>
-                        <button className=' w-12 sm:w-10 flex justify-center items-center'>
+                        <button className=' w-12 sm:w-10 flex justify-center items-center'  onClick={() => {deletebyID(e.id)}}>
                           <img src = {de} className='w-5' ></img>
                         </button>
                         <button  className=' w-12 sm:w-10 flex justify-center items-center' >
                           <Link to = {`/reportDetail/${e.id}`}><img src = {view} className='w-5' ></img></Link>
                         </button>
-                    ``</div>
+                    </div>
                       </div>
                 
                    </div>

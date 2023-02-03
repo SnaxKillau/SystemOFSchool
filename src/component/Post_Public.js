@@ -15,7 +15,7 @@ function Post_Public() {
    const deletedata = useSelector(state => state.postDelete)
    const data = useSelector(state => state.posts)
    const dispatch = useDispatch()
-  
+   const userType = useSelector(state => state.users)
 
 
    useEffect(() => {
@@ -61,9 +61,10 @@ function Post_Public() {
                          <img src={view} className = "w-10 h-10 p-2"></img>
                          </Link>
                         </button>
-                        <button onClick={() => {deletepost(e.id)}}>
+                       { userType.admin ? <button onClick={() => {deletepost(e.id)}}>
                           <img src={remove} className = "w-10 h-10 p-2"></img>
-                        </button>
+                        </button> : null
+                        }
                        
 
                        </div>

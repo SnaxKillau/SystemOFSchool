@@ -15,9 +15,17 @@ import deleteFoundReducer from "./DeleteFoundReducer";
 import Foundreducer from "./LostandFoundReducer";
 import viewFoundReducer from "./Lost0rFoundDetail";
 import lostPostingReducer from "./LostorFoundingPostingReducer";
+import postReportReducer from "./ReportPosting";
+import infoReducer from "./InformationReducer";
+import deleteInfoReducer from "./InfoDeleteReducer";
+import infoDetailReducer from "./InfoDetailReducer";
+import postPostingReducer from "./PostPostingReducer";
+import fetchUserreducer from "./UsersReducer";
+import deleteUserReducer from "./UsersDeleteReducer";
 
 const rootReducer = combineReducers({
     report:  reportReducer,
+    postReport : postAnnouncementReducer,
     users : UserReducer,
     deletereport : deletereportReducer,
     detailofreport :  detailofreportReducer,
@@ -32,6 +40,12 @@ const rootReducer = combineReducers({
     deleteFound : deleteFoundReducer,
     foundReducer : Foundreducer,
     foundDetail : viewFoundReducer,
-    lostPosting : lostPostingReducer
+    lostPosting : lostPostingReducer,
+    info : infoReducer,
+    deleteInfo : deleteInfoReducer,
+    infoDetail : infoDetailReducer,
+    postPosting : postPostingReducer,
+    fetchUser : fetchUserreducer,
+    deleteUser : deleteUserReducer
 })
 export default rootReducer

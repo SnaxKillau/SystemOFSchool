@@ -10,7 +10,7 @@ import  {viewAnnouncementDetail} from '../redux/AnnouncementAction'
 function AnnoumentDetail() {
 
     const id = useParams()
-    const data = useSelector(state => state. viewAnnouncement)
+    const data = useSelector(state => state.viewAnnouncement)
     const dispatch = useDispatch()
 
     useEffect(() => {
